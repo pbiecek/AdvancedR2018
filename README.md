@@ -25,6 +25,22 @@ Plan spotka&#324; MINI PW
 Projekt 1
 ---------
 
+Projekt 1 można wykonywać w grupach do 3 osób.
+Celem projektu jest zebranie z różnych źródeł skryptów R od różnych autorów, a następnie wykonanie prostej analizy częstościowej na tych skryptach.
+Każdy zespół powinien:
+
+1. Z repozytoriów kodu R (takich jak GitHub, CRAN, Bioconductor inne) pobrać kody instrukcji R dla przynajmniej 10 różnych autorów (zalecana liczba to 100+ różnych autorów). Kody powinny być zbierane w postaci plików tekstowych z podziałem na dwie grupy: A) kody R dla pakietów i B) kody R dla skryptów/analiz/raportów.
+2. Po zebraniu kodów dla każdego autora/grupy należy przeprowadzić analizę dotyczącą częstości wykorzystania różnych pakietów R/funkcji R.
+3. Należy zaprezentować analizę porównawczą kodów od różnych autorów/grup.
+
+Wśród zebranych skryptów należy mieć przynajmniej 10 autorów/źródeł których nie ma żadna inna grupa.
+
+Punkt 3 będzie prezentowany na zajęciach. Zaliczenie tego projektu jest na podstawie zaprezentowanego raportu oraz wolumenu zebranych kodów R.
+
+Można w analizach wykorzystywać kody zebrane przez inne zespoły (za ich zgodą), ale każdy zespół musi dostarczyć przynajmniej 10 unikatowych źródeł.
+
+Jako ciekawe rozszerzenie projektu można potrafktować analizy związane ze sposobem nazywania zmiennych/funkcji.
+
 
 Prezentacje pakietów
 --------------------
