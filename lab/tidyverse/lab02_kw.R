@@ -114,10 +114,10 @@ auta %>%
 auta2012 %>% 
   mutate(czy_klimatyzacja = ifelse(stri_detect_fixed(Wyposazenie.dodatkowe,  "klimatyzacja"),1,0)) %>% 
   group_by(Marka) %>% 
-  summarise(ile_klimatyzacja = sum(czy_klimatyzacja), licznosc = n()) %>% 
-  mutate(freq_klimatyzacja=ile_klimatyzacja/licznosc) %>% 
-  arrange(-freq_klimatyzacja ) %>% 
-  head()
+  summarise(ile_klimatyzacja = sum(czy_klimatyzacja)) %>% 
+  #mutate(freq_klimatyzacja=ile_klimatyzacja/licznosc) %>% 
+  arrange(-ile_klimatyzacja ) %>% 
+  head(1)
 
 
 #13 Gdy ograniczyæ siê tylko do aut o cenie ponad 50 000 PLN, która Marka wystêpuje najczêœciej w zbiorze danych auta2012?
