@@ -17,7 +17,7 @@ Plan spotka&#324; MINI PW
 * 9 V Prezentacje pakietów cz. 1
 * 16 V Prezentacje pakietów cz. 2
 * 23 V Tidyverse cz 2, broom, forcats, purrr
-* 30 V TBA
+* 30 V Bazy danych duże i małe
 * 6 VI TBA
 * 13 VI Oddanie projektu 2
 
