@@ -80,7 +80,14 @@ Célia Touraine, Thomas A. Gerds, Pierre Joly
 * [trackeR: Infrastructure for Running and Cycling Data from GPS-Enabled Tracking Devices in R](https://www.jstatsoft.org/article/view/v082i07) Hannah Frick, Ioannis Kosmidis
 
 
+Zaliczenie
+----------
 
+Zaliczenie jest oparte o 
+
+* zespołowy projekt 1 (30% zaliczenia), 
+* prezentacje pakietów (20% zaliczenia),
+*  indywidualny projekt 2 (50% zaliczenia).
 
 
 Materiały dodatkowe
