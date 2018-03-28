@@ -10,7 +10,7 @@ Plan spotka&#324; MINI PW
 
 * 14 III [scrapping](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_wczytywac_korpusy_tekstu.html)
 * 21 III [Tidyverse cz 1](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/czyscic_przetwarzac.html) a dokładniej `dplyr` i `tidyr`
-* 28 III Budowa pakietów
+* 28 III [Budowa pakietów](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pakiety/po_co.html)
 * 4 IV Shiny
 * 11 IV HPC + Archivist
 * 18 IV Oddanie projektu 1
@@ -58,7 +58,7 @@ Tematy:
 * [The R Package groc for Generalized Regression on Orthogonal Components](https://www.jstatsoft.org/article/view/v065i01) Martin Bilodeau, Pierre Lafaye de Micheaux, Smail Mahdi
 * [fitdistrplus: An R Package for Fitting Distributions](https://www.jstatsoft.org/article/view/v064i04) Marie Laure Delignette-Muller, Christophe Dutang
 * [ranger: A Fast Implementation of Random Forests for High Dimensional Data in C++ and R](https://www.jstatsoft.org/article/view/v077i01) Marvin N. Wright, Andreas Ziegler
-* [Interactive Dendrograms: The R Packages idendro and idendr0](https://www.jstatsoft.org/article/view/v076i10) Tomáš Sieger, Catherine B. Hurley, Karel Fišer, Claudia Beleites
+* [Interactive Dendrograms: The R Packages idendro and idendr0](https://www.jstatsoft.org/article/view/v076i10) Tomáš Sieger, Catherine B. Hurley, Karel Fišer, Claudia Beleites      *--Mat Kru*
 * [CircNNTSR: An R Package for the Statistical Analysis of Circular, Multivariate Circular, and Spherical Data Using Nonnegative Trigonometric Sums](https://www.jstatsoft.org/article/view/v070i06) Juan José Fernández-Durán, María Mercedes Gregorio-Domínguez
 * [bartMachine: Machine Learning with Bayesian Additive Regression Trees](https://www.jstatsoft.org/article/view/v070i04) Adam Kapelner, Justin Bleich
 * [gramEvol: Grammatical Evolution in R](https://www.jstatsoft.org/article/view/v071i01) Farzad Noorian, Anthony M. de Silva, Philip H. W. Leong
