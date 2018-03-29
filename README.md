@@ -53,7 +53,7 @@ Prezentacja powinna trwać do 10 min, ale należy przewidzieć kolejne 10 min na
 
 Tematy:
 
-* [Visually Exploring Missing Values in Multivariable Data Using a Graphical User Interface](https://www.jstatsoft.org/article/view/v068i06) Xiaoyue Cheng, Dianne Cook, Heike Hofmann
+* [Visually Exploring Missing Values in Multivariable Data Using a Graphical User Interface](https://www.jstatsoft.org/article/view/v068i06) Xiaoyue Cheng, Dianne Cook, Heike Hofmann *--AK--*
 * [missMDA: A Package for Handling Missing Values in Multivariate Data Analysis](https://www.jstatsoft.org/article/view/v070i01) Julie Josse, François Husson
 * [The R Package groc for Generalized Regression on Orthogonal Components](https://www.jstatsoft.org/article/view/v065i01) Martin Bilodeau, Pierre Lafaye de Micheaux, Smail Mahdi
 * [fitdistrplus: An R Package for Fitting Distributions](https://www.jstatsoft.org/article/view/v064i04) Marie Laure Delignette-Muller, Christophe Dutang
