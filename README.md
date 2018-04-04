@@ -78,6 +78,7 @@ Célia Touraine, Thomas A. Gerds, Pierre Joly
 * [tscount: An R Package for Analysis of Count Time Series Following Generalized Linear Models](https://www.jstatsoft.org/article/view/v082i05) Tobias Liboschik, Konstantinos Fokianos, Roland Fried
 * [vdmR: Generating Web-Based Visual Data Mining Tools with R](https://www.jstatsoft.org/article/view/v082i06) Tomokazu Fujino *-- Eliza K* 
 * [trackeR: Infrastructure for Running and Cycling Data from GPS-Enabled Tracking Devices in R](https://www.jstatsoft.org/article/view/v082i07) Hannah Frick, Ioannis Kosmidis
+* [Computing and Visualizing Dynamic Time Warping Alignments in R: The dtw Package](https://www.jstatsoft.org/article/view/v031i07) Toni Giorgino --komosinskid
 
 
 Zaliczenie
