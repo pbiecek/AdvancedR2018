@@ -12,7 +12,7 @@ Plan spotka&#324; MINI PW
 * 21 III [Tidyverse cz 1](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/czyscic_przetwarzac.html) a dokładniej `dplyr` i `tidyr`
 * 28 III [Budowa pakietów](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pakiety/po_co.html)
 * 4 IV [Shiny](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_tworzyc_aplikajce.html)
-* 11 IV HPC + Archivist
+* 11 IV [HPC](https://rawgit.com/pbiecek/RandBigData/master/MINI_2015/materialy/hpc/hpc.html) + [Archivist](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pazury/archivist.html)
 * 18 IV Oddanie projektu 1
 * 9 V Prezentacje pakietów cz. 1
 * 16 V Prezentacje pakietów cz. 2
