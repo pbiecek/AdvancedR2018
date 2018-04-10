@@ -11,7 +11,7 @@ Plan spotka&#324; MINI PW
 * 14 III [scrapping](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_wczytywac_korpusy_tekstu.html)
 * 21 III [Tidyverse cz 1](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/czyscic_przetwarzac.html) a dokładniej `dplyr` i `tidyr`
 * 28 III [Budowa pakietów](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pakiety/po_co.html)
-* 4 IV Shiny
+* 4 IV [Shiny](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_tworzyc_aplikajce.html)
 * 11 IV HPC + Archivist
 * 18 IV Oddanie projektu 1
 * 9 V Prezentacje pakietów cz. 1
@@ -53,11 +53,11 @@ Prezentacja powinna trwać do 10 min, ale należy przewidzieć kolejne 10 min na
 
 Tematy:
 
-* [Visually Exploring Missing Values in Multivariable Data Using a Graphical User Interface](https://www.jstatsoft.org/article/view/v068i06) Xiaoyue Cheng, Dianne Cook, Heike Hofmann
+* [Visually Exploring Missing Values in Multivariable Data Using a Graphical User Interface](https://www.jstatsoft.org/article/view/v068i06) Xiaoyue Cheng, Dianne Cook, Heike Hofmann *--AK--*
 * [missMDA: A Package for Handling Missing Values in Multivariate Data Analysis](https://www.jstatsoft.org/article/view/v070i01) Julie Josse, François Husson
 * [The R Package groc for Generalized Regression on Orthogonal Components](https://www.jstatsoft.org/article/view/v065i01) Martin Bilodeau, Pierre Lafaye de Micheaux, Smail Mahdi
 * [fitdistrplus: An R Package for Fitting Distributions](https://www.jstatsoft.org/article/view/v064i04) Marie Laure Delignette-Muller, Christophe Dutang
-* [ranger: A Fast Implementation of Random Forests for High Dimensional Data in C++ and R](https://www.jstatsoft.org/article/view/v077i01) Marvin N. Wright, Andreas Ziegler
+* [ranger: A Fast Implementation of Random Forests for High Dimensional Data in C++ and R](https://www.jstatsoft.org/article/view/v077i01) Marvin N. Wright, Andreas Ziegler *--Kam Rom*
 * [Interactive Dendrograms: The R Packages idendro and idendr0](https://www.jstatsoft.org/article/view/v076i10) Tomáš Sieger, Catherine B. Hurley, Karel Fišer, Claudia Beleites      *--Mat Kru*
 * [CircNNTSR: An R Package for the Statistical Analysis of Circular, Multivariate Circular, and Spherical Data Using Nonnegative Trigonometric Sums](https://www.jstatsoft.org/article/view/v070i06) Juan José Fernández-Durán, María Mercedes Gregorio-Domínguez
 * [bartMachine: Machine Learning with Bayesian Additive Regression Trees](https://www.jstatsoft.org/article/view/v070i04) Adam Kapelner, Justin Bleich
@@ -72,12 +72,13 @@ Célia Touraine, Thomas A. Gerds, Pierre Joly
 * [A Recipe for inferference: Start with Causal Inference. Add Interference. Mix Well with R.](https://www.jstatsoft.org/article/view/v082i02) Bradley C. Saul, Michael G. Hudgens
 * [SIS: An R Package for Sure Independence Screening in Ultrahigh-Dimensional Statistical Models](https://www.jstatsoft.org/article/view/v083i02) Diego Franco Saldana, Yang Feng
 * [PPtreeViz: An R Package for Visualizing Projection Pursuit Classification Trees](https://www.jstatsoft.org/article/view/v083i08) Eun-Kyung Lee
-* [mplot: An R Package for Graphical Model Stability and Variable Selection Procedures](https://www.jstatsoft.org/article/view/v083i09) Garth Tarr, Samuel Müller, Alan H. Welsh
+* [mplot: An R Package for Graphical Model Stability and Variable Selection Procedures](https://www.jstatsoft.org/article/view/v083i09) Garth Tarr, Samuel Müller, Alan H. Welsh *-- Katarzyna W*
 * [epinet: An R Package to Analyze Epidemics Spread across Contact Networks](https://www.jstatsoft.org/article/view/v083i11) Chris Groendyke, David Welch
 * [ThresholdROC: Optimum Threshold Estimation Tools for Continuous Diagnostic Tests in R](https://www.jstatsoft.org/article/view/v082i04) Sara Perez-Jaume, Konstantina Skaltsa, Natàlia Pallarès, Josep L. Carrasco
 * [tscount: An R Package for Analysis of Count Time Series Following Generalized Linear Models](https://www.jstatsoft.org/article/view/v082i05) Tobias Liboschik, Konstantinos Fokianos, Roland Fried
-* [vdmR: Generating Web-Based Visual Data Mining Tools with R](https://www.jstatsoft.org/article/view/v082i06) Tomokazu Fujino
+* [vdmR: Generating Web-Based Visual Data Mining Tools with R](https://www.jstatsoft.org/article/view/v082i06) Tomokazu Fujino *-- Eliza K* 
 * [trackeR: Infrastructure for Running and Cycling Data from GPS-Enabled Tracking Devices in R](https://www.jstatsoft.org/article/view/v082i07) Hannah Frick, Ioannis Kosmidis
+* [Computing and Visualizing Dynamic Time Warping Alignments in R: The dtw Package](https://www.jstatsoft.org/article/view/v031i07) Toni Giorgino --komosinskid
 
 
 Zaliczenie
