@@ -41,6 +41,8 @@ Można w analizach wykorzystywać kody zebrane przez inne zespoły (za ich zgod�
 
 Jako ciekawe rozszerzenie projektu można potrafktować analizy związane ze sposobem nazywania zmiennych/funkcji.
 
+Wyniki (prezentacje, skrypty scapujące dane) proszę umieścić w katalogu `Projekt1` w podkatalogu z nazwą zespołu. Spakowane pozyskane skrypty R należy umieścić w portalu typu WeTransfer, Dropbox, GDrive. W ww katalogu wystarczy umieścić link do tych materiałów.
+
 
 Prezentacje pakietów
 --------------------
