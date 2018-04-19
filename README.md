@@ -77,7 +77,7 @@ Célia Touraine, Thomas A. Gerds, Pierre Joly
 * [ThresholdROC: Optimum Threshold Estimation Tools for Continuous Diagnostic Tests in R](https://www.jstatsoft.org/article/view/v082i04) Sara Perez-Jaume, Konstantina Skaltsa, Natàlia Pallarès, Josep L. Carrasco
 * [tscount: An R Package for Analysis of Count Time Series Following Generalized Linear Models](https://www.jstatsoft.org/article/view/v082i05) Tobias Liboschik, Konstantinos Fokianos, Roland Fried
 * [vdmR: Generating Web-Based Visual Data Mining Tools with R](https://www.jstatsoft.org/article/view/v082i06) Tomokazu Fujino
-* [trackeR: Infrastructure for Running and Cycling Data from GPS-Enabled Tracking Devices in R](https://www.jstatsoft.org/article/view/v082i07) Hannah Frick, Ioannis Kosmidis
+* [trackeR: Infrastructure for Running and Cycling Data from GPS-Enabled Tracking Devices in R](https://www.jstatsoft.org/article/view/v082i07) Hannah Frick, Ioannis Kosmidis -- Monika Chudek, Anna Gierlak
 
 
 Zaliczenie
