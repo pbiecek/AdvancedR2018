@@ -1,0 +1,21 @@
+Autorzy:
+
+* Dariusz Komosiński
+* Mateusz Krubiński
+* Maciej Kurek
+
+
+
+Załączamy:
+
+* pliki do ściągania danych: get_from_gir.R, get_from_cran.R
+* plik do analizy danych tekstowych: funkcje_text_analize.R
+* pliki do eksploracji: analize_CRAN.R, analize_GIT.R
+* prezentację z otrzymanymi wynikami
+
+Dane (link aktywny do 25.04.2018):   https://we.tl/5ub4VcSSY1
+
+* CRAN.tar.gz to ściągnięte pliki R i DESCRIPRION, z ok. 12 500 bilbiotek
+* GIT.tar.gz to skrypty R użytkowników pozyskane z GITa
+* CRAN_PROCESSED_WITH_TA to dane przetworzone funkcjami analizującymi tekst, jako obiekt z R
+* GIT_PROCESSED_WITH_TA j.w., dla danych z GIT
