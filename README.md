@@ -12,8 +12,9 @@ Plan spotka&#324; MINI PW
 * 21 III [Tidyverse cz 1](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/czyscic_przetwarzac.html) a dokładniej `dplyr` i `tidyr`
 * 28 III [Budowa pakietów](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pakiety/po_co.html)
 * 4 IV [Shiny](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_tworzyc_aplikajce.html)
-* 11 IV HPC + Archivist
+* 11 IV [HPC](https://rawgit.com/pbiecek/RandBigData/master/MINI_2015/materialy/hpc/hpc.html) + [Archivist](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pazury/archivist.html)
 * 18 IV Oddanie projektu 1
+* 25 IV Debugowanie kodu, profilowanie kodu
 * 9 V Prezentacje pakietów cz. 1
 * 16 V Prezentacje pakietów cz. 2
 * 23 V Tidyverse cz 2, broom, forcats, purrr
@@ -40,6 +41,8 @@ Punkt 3 będzie prezentowany na zajęciach. Zaliczenie tego projektu jest na pod
 Można w analizach wykorzystywać kody zebrane przez inne zespoły (za ich zgodą), ale każdy zespół musi dostarczyć przynajmniej 10 unikatowych źródeł.
 
 Jako ciekawe rozszerzenie projektu można potrafktować analizy związane ze sposobem nazywania zmiennych/funkcji.
+
+Wyniki (prezentacje, skrypty scapujące dane) proszę umieścić w katalogu `Projekt1` w podkatalogu z nazwą zespołu. Spakowane pozyskane skrypty R należy umieścić w portalu typu WeTransfer, Dropbox, GDrive. W ww katalogu wystarczy umieścić link do tych materiałów.
 
 
 Prezentacje pakietów
@@ -77,7 +80,7 @@ Célia Touraine, Thomas A. Gerds, Pierre Joly
 * [ThresholdROC: Optimum Threshold Estimation Tools for Continuous Diagnostic Tests in R](https://www.jstatsoft.org/article/view/v082i04) Sara Perez-Jaume, Konstantina Skaltsa, Natàlia Pallarès, Josep L. Carrasco
 * [tscount: An R Package for Analysis of Count Time Series Following Generalized Linear Models](https://www.jstatsoft.org/article/view/v082i05) Tobias Liboschik, Konstantinos Fokianos, Roland Fried
 * [vdmR: Generating Web-Based Visual Data Mining Tools with R](https://www.jstatsoft.org/article/view/v082i06) Tomokazu Fujino *-- Eliza K* 
-* [trackeR: Infrastructure for Running and Cycling Data from GPS-Enabled Tracking Devices in R](https://www.jstatsoft.org/article/view/v082i07) Hannah Frick, Ioannis Kosmidis
+* [trackeR: Infrastructure for Running and Cycling Data from GPS-Enabled Tracking Devices in R](https://www.jstatsoft.org/article/view/v082i07) Hannah Frick, Ioannis Kosmidis --Monika Chudek, Anna Gierlak
 * [Computing and Visualizing Dynamic Time Warping Alignments in R: The dtw Package](https://www.jstatsoft.org/article/view/v031i07) Toni Giorgino --komosinskid
 
 
