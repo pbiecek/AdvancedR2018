@@ -1,0 +1,21 @@
+Autorzy:
+
+* Anna Gierlak
+* Anna Kozak
+* Kamil Romaszko
+
+Link do aplikacji RShiny: https://annakozak.shinyapps.io/Projekt_1_AG_AK_KR/
+
+Link do danych: https://drive.google.com/drive/folders/1Xv3uNpFfRAmJ4kI47RGmHtZYhXJ1v7ZE?usp=sharing
+
+Pliki do scrapowanie danych:
+* analiza.R
+* articlesFromGithub
+* crantasticScrapper
+
+Pliki do analizy:
+* analiza.R
+* pakiety_autorzy_pakiety.R
+* uzyte_funkcje.R
+* B_category_functions_by_repo
+* B_category_packages_by_repo
