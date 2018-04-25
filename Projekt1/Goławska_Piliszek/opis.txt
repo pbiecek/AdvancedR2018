@@ -1,0 +1,12 @@
+Grupa w sk³adzie:
+	-Go³awska Joanna
+	-Piliszek Maria
+
+Za³¹czamy pliki:
+	- pobieranie_plikow_github.R - funckje z których korzysta³yœmy przy pobieraniu plików z githuba
+	- funkcje_do_analiz.R - pomocnicze funkcje s³u¿¹ce do eksploracji pobranych plików
+	- generowanie_wyników.R - skrypt, przy pomocy którego wygenerowane zosta³y wyniki umieszczone w prezentacji
+	- prezentacja.pdf - prezentacja wyników
+
+Pobrane przez nas pliki wykorzystane w projekcie mo¿na znaleŸæ pod linkiem:
+https://drive.google.com/open?id=1DGowajqHKh4X8mCsz0LD1QzJR2z_ZvfJ

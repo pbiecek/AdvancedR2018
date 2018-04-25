@@ -14,13 +14,13 @@ Plan spotka&#324; MINI PW
 * 4 IV [Shiny](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_tworzyc_aplikajce.html)
 * 11 IV [HPC](https://rawgit.com/pbiecek/RandBigData/master/MINI_2015/materialy/hpc/hpc.html) + [Archivist](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pazury/archivist.html)
 * 18 IV Oddanie projektu 1
-* 25 IV Debugowanie kodu, profilowanie kodu
+* 25 IV [Debugowanie kodu](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pazury/debugowanie.html), [profilowanie kodu](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pazury/profilowanie.html), [zrównoleglanie kodu](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pazury/rownolegle.html)
 * 9 V Prezentacje pakietów cz. 1
 * 16 V Prezentacje pakietów cz. 2
 * 23 V Tidyverse cz 2, broom, forcats, purrr
-* 30 V Bazy danych duże i małe
-* 6 VI TBA
-* 13 VI Oddanie projektu 2
+* 30 V Oddanie projektu 2/1
+* 6 VI Bazy danych duże i małe
+* 13 VI Oddanie projektu 2/2
 
 
 Projekt 1
@@ -76,7 +76,7 @@ Célia Touraine, Thomas A. Gerds, Pierre Joly
 * [SIS: An R Package for Sure Independence Screening in Ultrahigh-Dimensional Statistical Models](https://www.jstatsoft.org/article/view/v083i02) Diego Franco Saldana, Yang Feng
 * [PPtreeViz: An R Package for Visualizing Projection Pursuit Classification Trees](https://www.jstatsoft.org/article/view/v083i08) Eun-Kyung Lee
 * [mplot: An R Package for Graphical Model Stability and Variable Selection Procedures](https://www.jstatsoft.org/article/view/v083i09) Garth Tarr, Samuel Müller, Alan H. Welsh *-- Katarzyna W*
-* [epinet: An R Package to Analyze Epidemics Spread across Contact Networks](https://www.jstatsoft.org/article/view/v083i11) Chris Groendyke, David Welch
+* [epinet: An R Package to Analyze Epidemics Spread across Contact Networks](https://www.jstatsoft.org/article/view/v083i11) Chris Groendyke, David Welch -JJ
 * [ThresholdROC: Optimum Threshold Estimation Tools for Continuous Diagnostic Tests in R](https://www.jstatsoft.org/article/view/v082i04) Sara Perez-Jaume, Konstantina Skaltsa, Natàlia Pallarès, Josep L. Carrasco
 * [tscount: An R Package for Analysis of Count Time Series Following Generalized Linear Models](https://www.jstatsoft.org/article/view/v082i05) Tobias Liboschik, Konstantinos Fokianos, Roland Fried
 * [vdmR: Generating Web-Based Visual Data Mining Tools with R](https://www.jstatsoft.org/article/view/v082i06) Tomokazu Fujino *-- Eliza K* 
