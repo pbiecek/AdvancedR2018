@@ -1,0 +1,679 @@
+---
+title: "Projekt 1"
+author: "Ma³gosia £azêcka, Kasia WoŸnica, Eliza Kaczorek"
+date: "18 kwietnia 2018"
+output: html_document
+---
+```{r echo = FALSE, warning = FALSE, message=FALSE}
+library(ggplot2)
+library(stringi)
+library(dplyr)
+library(data.table)
+library(ScrabbleScore)
+library(gridExtra)
+library("ape")
+library(RColorBrewer)
+library(networkD3)
+
+# setwd("D:\\SMAD\\R_level2\\projekt1\\raport")
+  setwd("C:/Users/Kasia1/Magisterka/R_zaaw")
+
+#setwd("D:/MY DATA/STUDIA/MGR Sem 4/R dla Zaawansowanych/Projekt 1")
+
+load("LISTA_TABEL_nowa.rda")
+```
+
+## Zebrane dane
+
+Dla grupy A zebra³yœmy $821$ autorów, natomiast dla grupy B - $246$ autorów.
+Pobra³yœmy prawie $17000$ plików z CRANA oraz pliki `.R` pochodz¹ce zarówno z pakietów, jak i zwyk³e skrypty od $280$ autorów z Githuba w iloœci prawie $24000$ plików. 
+
+## Analiza zebranych danych
+
+### 1. Nazwy funkcji
+
+```{r echo = FALSE, warning = FALSE, message=FALSE}
+# tworzymy tabelkê z liczb¹ kropek, d³ugoœci¹ i punktacj¹ w scrabble nazw funkcji
+funkcje_autorzy_A <- LISTA_TABEL[[1]]
+funkcje_autorzy_A$dlugosc_nazwy <- stri_length(funkcje_autorzy_A[,1])
+funkcje_autorzy_A$liczba_kropek <- sapply(funkcje_autorzy_A[,1], 
+                                          function(x) X = length(which(!is.na(stri_locate_all_regex(x,pattern="[\\._]")[[1]][,1]))))
+funkcje_autorzy_A$liczba_kropek <- ifelse(is.na(funkcje_autorzy_A$liczba_kropek),0,funkcje_autorzy_A$liczba_kropek)
+funkcje_autorzy_A$scrabble <- sws(funkcje_autorzy_A[,1], only.possible = FALSE)
+
+funkcje_autorzy_B <- LISTA_TABEL[[4]]
+funkcje_autorzy_B$dlugosc_nazwy <- stri_length(funkcje_autorzy_B[,1])
+funkcje_autorzy_B$liczba_kropek <- sapply(funkcje_autorzy_B[,1], 
+                                          function(x) length(which(!is.na(stri_locate_all_regex(x,pattern="[\\._]")[[1]][,1]))))
+funkcje_autorzy_B$liczba_kropek <- ifelse(is.na(funkcje_autorzy_B$liczba_kropek),0,funkcje_autorzy_B$liczba_kropek)
+funkcje_autorzy_B$scrabble <- sws(funkcje_autorzy_B[,1], only.possible = FALSE)
+
+######################
+indeksy <- which(funkcje_autorzy_A$liczba_kropek>5)
+# funkcje_autorzy_A[indeksy, c(1)]
+funkcje_autorzy_A <- funkcje_autorzy_A[-indeksy[c(23:25,49,88,93,121,125:128)],]
+
+indeksy <- which(funkcje_autorzy_B$liczba_kropek>5)
+# funkcje_autorzy_B[indeksy, c(1)]
+funkcje_autorzy_B <- funkcje_autorzy_B[-indeksy[c(21:23,46,54,59,62,68,69:72)],]
+######################
+
+
+df_funkcje <- data.frame(liczba_kropek = c(funkcje_autorzy_A$liczba_kropek, funkcje_autorzy_B$liczba_kropek),
+                         dlugosc_nazwy = c(funkcje_autorzy_A$dlugosc_nazwy, funkcje_autorzy_B$dlugosc_nazwy),
+                         scrabble = c(funkcje_autorzy_A$scrabble, funkcje_autorzy_B$scrabble),
+                         grupa = c(rep("A",length(funkcje_autorzy_A$liczba_kropek)),
+                                   rep("B",length(funkcje_autorzy_B$liczba_kropek))))
+
+
+tmp <- funkcje_autorzy_A[,c(1,823:825)]
+tmp <- tmp[order(tmp$liczba_kropek, decreasing = TRUE),]
+```
+
+\vspace{0.5cm}
+
+Na poni¿szym wykresie porównujemy liczbê kropek w nazwach funkcji w grupie A i B.
+
+```{r echo = FALSE, warning = FALSE, message=FALSE}
+# ggplot(df_funkcje, aes(x = liczba_kropek, fill = grupa)) +
+#   geom_histogram(binwidth = 1,aes(y = ..density..), position = position_dodge(width=0.25)) +
+#   labs(x = "Liczba kropek", y = "Frakcja", fill = "Grupa")
+
+ggplot(df_funkcje, aes(x = liczba_kropek, fill = grupa)) +
+  geom_bar(position = "dodge", aes(y = ..prop..)) +
+  labs(x = "Liczba kropek", y = "Frakcja", fill = "Grupa") +
+  ggtitle("Liczba kropek w nazwach funkcji")
+```
+
+\newpage
+Porównanie d³ugoœci nazw funkcji ró¿nych autorów, pakietów i skryptów w grupie A i B.
+
+```{r, echo = FALSE,warning=FALSE, fig.height=4, message=FALSE}
+ggplot(df_funkcje, aes(x = dlugosc_nazwy, fill = grupa)) +
+  geom_histogram(binwidth = 1, aes(y = ..density..), alpha = 0.3, position = "identity") +
+  labs(x = "Liczba znaków w nazwie funkcji", y = "Frakcja wyst¹pieñ", fill = "Grupa") +
+  xlim(c(0,30))  +
+  ggtitle("Histogram d³ugoœci nazw funkcji")
+
+# gorszy
+# ggplot(df_funkcje, aes(x = dlugosc_nazwy, fill = grupa)) +
+#   geom_histogram(binwidth = 1, aes(y = ..density..), position = "dodge") +
+#   labs(x = "Liczba kropek", y = "Frakcja", fill = "Grupa")
+```
+
+\vspace{0.5cm}
+
+Liczba kropek ³¹czy siê z d³ugoœci¹ nazwy funkcji.
+
+```{r, echo = FALSE, warning=FALSE,  message=FALSE, fig.height=4}
+# par(mfrow=c(1,2))
+p1 <- ggplot(funkcje_autorzy_A, aes(x = liczba_kropek, y=dlugosc_nazwy, group= liczba_kropek)) +
+  geom_boxplot() +
+  labs(x = "Liczba kropek", y = "D³ugoœæ nazwy", fill = "Grupa", xlim(c(0,8))) +
+  ggtitle("Grupa A")
+  
+p2 <- ggplot(funkcje_autorzy_B, aes(x = liczba_kropek, y=dlugosc_nazwy, group= liczba_kropek)) +
+  geom_boxplot() +
+  labs(x = "Liczba kropek", y = "D³ugoœæ nazwy", fill = "Grupa", xlim(c(0,8)))+
+  ggtitle("Grupa B")
+
+grid.arrange(p1,p2, nrow=1)
+
+par(mfrow=c(1,1))
+```
+
+\newpage
+Porównanie punktów w scrabble.
+
+```{r echo = FALSE, warnings = FALSE, message=FALSE}
+ggplot(df_funkcje, aes(x = scrabble, fill = grupa)) +
+  geom_histogram(binwidth = 1, aes(y = ..density..), position = "identity", alpha = 0.3) +
+  labs(x = "Suma punktów za s³owo w Scrabble", y = "Frakcja wyst¹pieñ", fill = "Grupa") +
+  ggtitle("Histogram punktów w scrabble")
+```
+
+
+<!-- ```{r, echo = FALSE, warning=FALSE, message=FALSE, warning=FALSE, fig.height=4} -->
+<!-- # autorzy_funkcje_A <- LISTA_TABEL$A_funkcje -->
+<!-- autorzy_funkcje_A$suma <- rowSums(autorzy_funkcje_A[,-1]) -->
+
+<!-- # autorzy_funkcje_B <- LISTA_TABEL$B_funkcje -->
+<!-- autorzy_funkcje_B$suma <- rowSums(autorzy_funkcje_B[,-1]) -->
+
+
+<!-- df_funkcje <- data.frame(funkcje = c(autorzy_funkcje_A$funkcje, autorzy_funkcje_B$funkcje), -->
+<!--                          suma = c(autorzy_funkcje_A$suma, autorzy_funkcje_B$suma), -->
+<!--                          grupa = c(rep("A",length(autorzy_funkcje_A$suma)), -->
+<!--                                    rep("B",length(autorzy_funkcje_B$suma)))) -->
+
+
+<!-- col1="#8DD3C7" -->
+
+<!-- funkcje_A <- subset(df_funkcje, grupa=="A") -->
+<!-- funkcje_A <- funkcje_A[order(funkcje_A$suma, decreasing = TRUE),] -->
+
+<!-- ggplot(data=funkcje_A[1:10,], aes(x = reorder(funkcje, suma), y = suma)) + -->
+<!--   geom_bar(stat="identity", width=1, fill=col1) + -->
+<!--   labs(x = "Funkcje", y = "Liczba wyst¹pieñ funkcji") + -->
+<!--   coord_flip() + -->
+<!--   ggtitle("10 najczêstszych funkcji grupie A") -->
+<!-- ``` -->
+
+<!-- ```{r, echo = FALSE, warning=FALSE, message=FALSE, warning=FALSE, fig.height=4} -->
+<!-- funkcje_B <- subset(df_funkcje, grupa=="B") -->
+<!-- funkcje_B <- funkcje_B[order(funkcje_B$suma, decreasing = TRUE),] -->
+
+<!-- ggplot(data=funkcje_B[1:10,], aes(x = reorder(funkcje, suma), y = suma)) + -->
+<!--   geom_bar(stat="identity", width=1, fill=col1) + -->
+<!--   labs(x = "Funkcje", y = "Liczba wyst¹pieñ funkcji") + -->
+<!--   coord_flip()+ -->
+<!--   ggtitle("10 najczêstszych funkcji grupie B") -->
+
+<!-- ``` -->
+
+
+
+
+\newpage
+### 2. Zmienne
+
+```{r echo = FALSE, message=FALSE, warning=FALSE}
+# tworzymy tabelkê z liczb¹ kropek, d³ugoœci¹ i punktacj¹ w scrabble nazw zmiennych
+zmienne_autorzy_A <- LISTA_TABEL[[3]]
+zmienne_autorzy_A$dlugosc_nazwy <- stri_length(zmienne_autorzy_A[,1])
+zmienne_autorzy_A$liczba_kropek <- sapply(zmienne_autorzy_A[,1], 
+                                          function(x) length(which(!is.na(stri_locate_all_regex(x,pattern="[\\._]")[[1]][,1]))))
+zmienne_autorzy_A$liczba_kropek <- ifelse(is.na(zmienne_autorzy_A$liczba_kropek),0,zmienne_autorzy_A$liczba_kropek)
+zmienne_autorzy_A$scrabble <- sws(zmienne_autorzy_A[,1], only.possible = FALSE)
+
+zmienne_autorzy_B <- LISTA_TABEL[[6]]
+zmienne_autorzy_B$dlugosc_nazwy <- stri_length(zmienne_autorzy_B[,1])
+zmienne_autorzy_B$liczba_kropek <- sapply(zmienne_autorzy_B[,1], 
+                                          function(x) length(which(!is.na(stri_locate_all_regex(x,pattern="[\\._]")[[1]][,1]))))
+zmienne_autorzy_B$liczba_kropek <- ifelse(is.na(zmienne_autorzy_B$liczba_kropek),0,zmienne_autorzy_B$liczba_kropek)
+zmienne_autorzy_B$scrabble <- sws(zmienne_autorzy_B[,1], only.possible = FALSE)
+
+df_zmienne <- data.frame(liczba_kropek = c(zmienne_autorzy_A$liczba_kropek, zmienne_autorzy_B$liczba_kropek),
+                         dlugosc_nazwy = c(zmienne_autorzy_A$dlugosc_nazwy, zmienne_autorzy_B$dlugosc_nazwy),
+                         scrabble = c(zmienne_autorzy_A$scrabble, zmienne_autorzy_B$scrabble),
+                         grupa = c(rep("A",length(zmienne_autorzy_A$liczba_kropek)),
+                                   rep("B",length(zmienne_autorzy_B$liczba_kropek))))
+```
+
+
+Na poni¿szym wykresie porównujemy liczbê kropek w nazwach zmiennych w grupie A i B.
+
+```{r echo = FALSE, message=FALSE, warning=FALSE, fig.height=4}
+ggplot(df_zmienne, aes(x = liczba_kropek, fill = grupa)) +
+  geom_bar(position = "dodge", aes(y = ..prop..)) +
+  labs(x = "Liczba kropek", y = "Frakcja", fill = "Grupa") +
+  xlim(c(-0.5,5)) +
+  ggtitle("Liczba kropek w nazwach zmiennych")
+# ggplot(df_funkcje, aes(x = liczba_kropek, fill = grupa)) +
+#   geom_histogram(binwidth = 1, aes(y = ..density..), position = "dodge") +
+#   labs(x = "Liczba kropek", y = "Frakcja", fill = "Grupa")
+```
+
+\vspace{0.5cm}
+Porównanie d³ugoœci nazw zmiennych autorów pakietów i skryptów.
+
+```{r, echo = FALSE,warning=FALSE, message=FALSE, warning=FALSE, fig.height=4}
+ggplot(df_zmienne, aes(x = dlugosc_nazwy, fill = grupa)) +
+  geom_histogram(binwidth = 1, aes(y = ..density..), alpha = 0.3, position = "identity") +
+  labs(x = "Liczba znaków w nazwie funkcji", y = "Frakcja wyst¹pieñ", fill = "Grupa") +
+  xlim(c(0,30)) +
+  ggtitle("Histogram d³ugoœci nazw zmiennych")
+
+# gorszy
+# ggplot(df_zmienne, aes(x = dlugosc_nazwy, fill = grupa)) +
+#   geom_histogram(binwidth = 1, aes(y = ..density..), position = "dodge") +
+#   labs(x = "Liczba kropek", y = "Frakcja", fill = "Grupa")
+```
+
+\newpage
+
+Liczba kropek ³¹czy siê z d³ugoœci¹ nazwy zmiennej.
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, warning=FALSE, fig.height=4}
+# par(mfrow=c(1,2))
+p1 <- ggplot(zmienne_autorzy_A, aes(x = liczba_kropek, y=dlugosc_nazwy, group= liczba_kropek)) +
+  geom_boxplot() +
+  labs(x = "Liczba kropek", y = "D³ugoœæ nazwy", fill = "Grupa") +
+  ggtitle("Grupa A")
+  
+p2 <- ggplot(zmienne_autorzy_B, aes(x = liczba_kropek, y=dlugosc_nazwy, group= liczba_kropek)) +
+  geom_boxplot() +
+  labs(x = "Liczba kropek", y = "D³ugoœæ nazwy", fill = "Grupa") +
+  ggtitle("Grupa B")
+
+grid.arrange(p1,p2,nrow=1)
+
+par(mfrow=c(1,1))
+```
+
+\vspace{0.5cm}
+Porównanie punktów w scrabble.
+
+```{r echo = FALSE, message=FALSE, warning=FALSE, fig.height=4}
+ggplot(df_zmienne, aes(x = scrabble, fill = grupa)) +
+  geom_histogram(binwidth = 1, aes(y = ..density..), position = "identity", alpha = 0.3) +
+  labs(x = "Suma punktów za s³owo w Scrabble", y = "Frakcja wyst¹pieñ", fill = "Grupa") +
+  xlim(c(-0.5,50)) +
+  ggtitle("Histogram punktów w scrabble")
+```
+
+
+
+\newpage
+
+### 3. Nazwa zmiennej a nazwa funkcji
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, warning=FALSE, fig.height=4}
+funkcje_autorzy_A <- LISTA_TABEL[[1]]
+x_A <- apply(funkcje_autorzy_A[,-1], 2, function(x)    x%*%stri_length(funkcje_autorzy_A[,1])/sum(x)) # 2 - w kolumnach -> dla autorow
+funkcje_autorzy_B <- LISTA_TABEL[[4]]
+x_B <- apply(funkcje_autorzy_B[,-1], 2, function(x) x%*%stri_length(funkcje_autorzy_B[,1])/sum(x))
+
+zmienne_autorzy_A <- LISTA_TABEL[[3]]
+y_A <- apply(zmienne_autorzy_A[,-1], 2, function(x) x%*%stri_length(zmienne_autorzy_A[,1])/sum(x))
+zmienne_autorzy_B <- LISTA_TABEL[[6]]
+y_B <- apply(zmienne_autorzy_B[,-1], 2, function(x) x%*%stri_length(zmienne_autorzy_B[,1])/sum(x))
+
+df_xy <- data.frame(x = c(x_A, x_B), y = c(y_A, y_B), 
+                    grupa = c(rep("A", length(x_A)), rep("B",length(x_B))))
+
+# x_A[which(x_A>25)]
+tmp <- funkcje_autorzy_A[,c(1,which( colnames(funkcje_autorzy_A) %in% "kaneplusplus"))]
+tmp <- tmp[tmp[,2]>0,]
+
+# plot(df_xy$x, df_xy$y,
+#      xlab="Œrednia d³ugoœæ pakietów dla autorów",
+#      ylab="Œrednia d³ugoœæ zmiennej dla autorów",
+#      main="Œrednia d³ugoœæ zmiennej w zale¿noœci \n od œredniej d³ugoœci pakietu \n dla ka¿dego autora",
+#      las=1
+#      )
+# rect(par("usr")[1], par("usr")[3], par("usr")[2], par("usr")[4], col = "grey92")
+# grid(col="white")
+# points(df_xy$x, df_xy$y, col=(df_xy$grupa=="A")+1)
+# legend(list(x = 20,y = 35),           
+#        legend = c("A","B"),               
+#        col = c("red","black"),     
+#        pch=1)
+
+ggplot(df_xy, aes(x, y) )+ 
+  geom_point(aes(colour = grupa)) +
+  ggtitle("Œrednia d³ugoœæ zmiennej w zale¿noœci od œredniej d³ugoœci funkcji \n dla ka¿dego autora") +
+  labs(x = "Œrednia d³ugoœæ funkcji", y="Œrednia d³ugoœæ zmiennej" ) 
+
+```
+
+\newpage
+
+### 4. Pakiety
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, warning=FALSE, fig.height=4}
+autorzy_pakiety_A <- LISTA_TABEL[[2]]
+# te_zle <- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,144,145,146,171,184,228,239,250,251,252,259,314,335,354,356,404,446,459,479,554,567,601,666,715,747,750,846,848,945,959,960,978,983,1001,1050,1057,1058)
+
+te_zle_A <- c(1,2,3,22,25,5)
+autorzy_pakiety_A <- autorzy_pakiety_A[-te_zle_A,]
+autorzy_pakiety_A[,1] <- gsub('\\\\|`','',autorzy_pakiety_A[,1])
+
+
+autorzy_pakiety_A$suma <- rowSums(autorzy_pakiety_A[,-1]) 
+
+autorzy_pakiety_B <- LISTA_TABEL[[5]]
+
+# which(autorzy_pakiety_B[,1] %in% c("/home/cris/Descargas/sentiment_0.2.tar.gz","/home/cris/Descargas/Rstem_0.4-1.tar.gz",
+   # "\\name\\","a",".","/Users/nacho/Documents/Code/Rprojects/Design_2.3-0.tar.gz")
+# )
+te_zle_B <- c(2,  4 , 5 , 7, 24, 41)
+autorzy_pakiety_B <- autorzy_pakiety_B[-te_zle_B,]
+
+autorzy_pakiety_B$suma <- rowSums(autorzy_pakiety_B[,-1]) 
+
+
+
+df_pakiety <- data.frame(pakiety = c(autorzy_pakiety_A$pakiety, autorzy_pakiety_B$pakiety),
+                         suma = c(autorzy_pakiety_A$suma, autorzy_pakiety_B$suma),
+                         grupa = c(rep("A",length(autorzy_pakiety_A$suma)), 
+                                   rep("B",length(autorzy_pakiety_B$suma))))
+
+najczestszych20_A <- sum(sort(autorzy_pakiety_A$suma, decreasing = TRUE)[1:floor(length(autorzy_pakiety_A$suma)/5)])/sum(autorzy_pakiety_A$suma)
+
+ostatni_A <- sort(autorzy_pakiety_A$suma, decreasing = TRUE)[floor(length(autorzy_pakiety_A$suma)/5)]
+
+najczestszych20_B <- sum(sort(autorzy_pakiety_B$suma, decreasing = TRUE)[1:floor(length(autorzy_pakiety_B$suma)/5)])/sum(autorzy_pakiety_B$suma)
+
+# ggplot(subset(df_pakiety, grupa=="A"), aes(label = pakiety, y = suma)) +
+#   geom_bar(binwidth = 1)
+# 
+# ggplot(subset(df_pakiety, grupa=="A"), aes(x = suma, y = ..density..)) +
+#   geom_histogram(binwidth = 1)  +
+#   xlim(c(0,10)) +
+#   labs(x = "Liczba wyst¹pieñ pakietu", y = "Frakcja") +
+#   stat_bin(binwidth=1, geom="text", aes(label=pakiety), vjust=-1.5) 
+# 
+# ggplot(subset(df_pakiety, grupa=="B"), aes(x = suma, y = ..density..)) +
+#   geom_histogram(binwidth = 1)  +
+#   xlim(c(0,100)) +
+#   geom_vline(xintercept=20,linetype=2,color="red") +
+#   annotate("text",x = c(10), y= c(0.2),label = round(c(najczestszych20_B),2))
+#   labs(x = "Liczba wyst¹pieñ pakietu", y = "Frakcja")
+
+col1="#8DD3C7"
+
+######### Licznoœci pakietów w grupie A
+pakiety_A <- subset(df_pakiety, grupa=="A") 
+pakiety_A <- pakiety_A[order(pakiety_A$suma, decreasing = TRUE),]
+ggplot(data=pakiety_A[1:120,], aes(x = 1:120, y = suma)) +
+  geom_bar(stat="identity", width=1, fill=col1) +
+  theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        panel.background = element_blank()) +
+  labs(x = "Pakiety", y = "Liczba wyst¹pieñ pakietu") +
+  ggtitle("Licznoœci pakietów w grupie A")
+
+ggplot(data=pakiety_A[1:10,], aes(x = reorder(pakiety, suma), y = suma)) +
+  geom_bar(stat="identity", width=1, fill=col1) +
+  labs(x = "Pakiety", y = "Liczba wyst¹pieñ pakietu") + 
+  coord_flip() +
+  ggtitle("10 najczêstszych pakietów grupie A")
+```
+
+
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, warning=FALSE, fig.height=4}
+pakiety_B <- subset(df_pakiety, grupa=="B") 
+pakiety_B <- pakiety_B[order(pakiety_B$suma, decreasing = TRUE),]
+ggplot(data=pakiety_B, aes(x = reorder(pakiety, -suma), y = suma)) +
+  geom_bar(stat="identity", width=1, fill=col1) +
+  theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank()) +
+  labs(x = "Pakiety", y = "Liczba wyst¹pieñ pakietu") +
+  ggtitle("Licznoœci pakietów w grupie B")
+
+ggplot(data=pakiety_B[1:10,], aes(x = reorder(pakiety, suma), y = suma)) +
+  geom_bar(stat="identity", width=1, fill=col1) +
+  labs(x = "Pakiety", y = "Liczba wyst¹pieñ pakietu") + 
+  coord_flip()+
+  ggtitle("10 najczêstszych pakietów grupie B")
+
+```
+
+### 5. Pakiety w podziale na grupy
+
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, warning=FALSE, fig.height=4}
+zestawienie <- read.csv("grupy_pakietow.csv")[,-1]
+
+
+autorzy_pakiety_A <- autorzy_pakiety_A %>% 
+  left_join(zestawienie) %>% 
+  mutate(grupa = ifelse(is.na(grupa),"inna",as.character(grupa)))
+
+autorzy_pakiety_A_agr_01 <- autorzy_pakiety_A %>% 
+  select(-pakiety)
+colnames(autorzy_pakiety_A_agr_01) <- c(1:(ncol(autorzy_pakiety_A_agr_01)-1),"grupa")
+
+autorzy_pakiety_A_agr <- autorzy_pakiety_A_agr_01 %>% 
+   group_by(grupa) %>% 
+  summarise_all(sum)
+colnames(autorzy_pakiety_A_agr) <- c("grupa",colnames(autorzy_pakiety_A)[-c(1,ncol(autorzy_pakiety_A))])
+
+autorzy_pakiety_A_agr$suma <- rowSums(autorzy_pakiety_A_agr[,-1]) 
+
+
+
+autorzy_pakiety_B <- autorzy_pakiety_B %>% 
+  left_join(zestawienie) %>% 
+  mutate(grupa = ifelse(is.na(grupa),"inna",as.character(grupa)))
+
+autorzy_pakiety_B_agr_01 <- autorzy_pakiety_B %>% 
+  select(-pakiety)
+colnames(autorzy_pakiety_B_agr_01) <- c(1:(ncol(autorzy_pakiety_B_agr_01)-1),"grupa")
+
+autorzy_pakiety_B_agr <- autorzy_pakiety_B_agr_01 %>% 
+  group_by(grupa) %>% 
+  summarise_all(sum)
+
+colnames(autorzy_pakiety_B_agr) <- c("grupa",colnames(autorzy_pakiety_B)[-c(1,ncol(autorzy_pakiety_B))])
+
+autorzy_pakiety_B_agr$suma <- rowSums(autorzy_pakiety_B_agr[,-1]) 
+
+
+df_pakiety_grupa <- data.frame(grupa_pakiety = c(autorzy_pakiety_A_agr$grupa, autorzy_pakiety_B_agr$grupa),
+                         suma = c(autorzy_pakiety_A_agr$suma, autorzy_pakiety_B_agr$suma),
+                         grupa = c(rep("A",length(autorzy_pakiety_A_agr$suma)), 
+                                   rep("B",length(autorzy_pakiety_B_agr$suma))))
+
+najczestszych20_A_agr <- sum(sort(autorzy_pakiety_A_agr$suma, decreasing = TRUE)[1:floor(length(autorzy_pakiety_A_agr$suma)/5)])/sum(autorzy_pakiety_A_agr$suma)
+
+ostatni_A_agr <- sort(autorzy_pakiety_A_agr$suma, decreasing = TRUE)[floor(length(autorzy_pakiety_A_agr$suma)/5)]
+
+najczestszych20_B_agr <- sum(sort(autorzy_pakiety_B_agr$suma, decreasing = TRUE)[1:floor(length(autorzy_pakiety_B_agr$suma)/5)])/sum(autorzy_pakiety_B_agr$suma)
+
+
+col1="#8DD3C7"
+pakiety_A <- subset(df_pakiety_grupa, grupa=="A") 
+pakiety_A <- pakiety_A[order(pakiety_A$suma, decreasing = TRUE),]
+ggplot(data=pakiety_A[1:120,], aes(x = reorder(grupa_pakiety, -suma), y = suma)) +
+  geom_bar(stat="identity", width=1, fill=col1) +
+  theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        panel.background = element_blank()) +
+  labs(x = "Pakiety", y = "Liczba wyst¹pieñ grup pakietów") +
+  ggtitle("Licznoœci pakietów w grupie A")
+
+ggplot(data=pakiety_A[2:120,], aes(x = reorder(grupa_pakiety, -suma), y = suma)) +
+  geom_bar(stat="identity", width=1, fill=col1) +
+  theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        panel.background = element_blank()) +
+  labs(x = "Pakiety", y = "Liczba wyst¹pieñ pakietów") +
+  ggtitle("Licznoœci pakietów w grupie A z usuniêciem  grupy inna")
+
+
+
+ggplot(data=pakiety_A[2:15,], aes(x = reorder(grupa_pakiety, suma), y = suma)) +
+  geom_bar(stat="identity", width=1, fill=col1) +
+  labs(x = "Pakiety", y = "Liczba wyst¹pieñ pakietu") + 
+  coord_flip() +
+  ggtitle("10 najczêstszych pakietów grupie A")
+
+
+
+```
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, warning=FALSE, fig.height=4}
+pakiety_B <- subset(df_pakiety_grupa, grupa=="B") 
+pakiety_B <- pakiety_B[order(pakiety_B$suma, decreasing = TRUE),]
+ggplot(data=pakiety_B[1:120,], aes(x = reorder(grupa_pakiety, -suma), y = suma)) +
+  geom_bar(stat="identity", width=1, fill=col1) +
+  theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        panel.background = element_blank()) +
+  labs(x = "Pakiety", y = "Liczba wyst¹pieñ grup pakietów") +
+  ggtitle("Licznoœci pakietów w grupie B")
+
+ggplot(data=pakiety_B[2:120,], aes(x = reorder(grupa_pakiety, -suma), y = suma)) +
+  geom_bar(stat="identity", width=1, fill=col1) +
+  theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        panel.background = element_blank()) +
+  labs(x = "Pakiety", y = "Liczba wyst¹pieñ grup pakietów") +
+  ggtitle("Licznoœci pakietów w grupie B z usuniêciem  grupy inna")
+
+
+
+ggplot(data=pakiety_B[2:11,], aes(x = reorder(grupa_pakiety, suma), y = suma)) +
+  geom_bar(stat="identity", width=1, fill=col1) +
+  labs(x = "Pakiety", y = "Liczba wyst¹pieñ grup pakietów") + 
+  coord_flip() +
+  ggtitle("10 najczêstszych pakietów grupie B")
+```
+
+### 6. Dendrogram dla najczêstszych pakietów z grupy A
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, warning=FALSE, fig.height=6, fig.width=6}
+
+autorzy_pakiety_A <- LISTA_TABEL[[2]]
+# te_zle <- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,144,145,146,171,184,228,239,250,251,252,259,314,335,354,356,404,446,459,479,554,567,601,666,715,747,750,846,848,945,959,960,978,983,1001,1050,1057,1058)
+
+te_zle_A <- c(1,2,3,22,25,5)
+autorzy_pakiety_A <- autorzy_pakiety_A[-te_zle_A,]
+autorzy_pakiety_A[,1] <- gsub('\\\\|`','',autorzy_pakiety_A[,1])
+
+macierz_A <- t(autorzy_pakiety_A[,-1])
+colnames(macierz_A) <- autorzy_pakiety_A[,1]
+
+macierz_A[macierz_A>0] <- 1
+
+czestosc_wykorzystania_A <- apply(macierz_A, 2, function(x) sum(x))
+
+# usuwam dziwne pakiety
+macierz_A <- macierz_A[,!(colnames(macierz_A)  %in% c("[gitbook]","%s","","{name}" ,"<<pkg_name(pkg","annotation(object",
+              "SL.library=c(library$predAlgorithm$library","addins[i","asVarName(e[[2]]" ))]
+
+# sum(czestosc_wykorzystania_A>20)
+# colnames(macierz_A) [which(czestosc_wykorzystania_A>20)]
+
+macierz_A <- macierz_A[,colnames(macierz_A) [which(czestosc_wykorzystania_A>20)]]
+
+d <- dist(t(macierz_A), method = "euclidean") # distance matrix
+fit <- hclust(d, method="ward.D2") 
+
+
+
+colors = brewer.pal(6,"Dark2")
+clus4 = cutree(fit, 6)
+par(mar=rep(2,4))
+plot(as.phylo(fit), type = "fan", tip.color = colors[clus4],
+     label.offset = 0.6, cex = 0.8, main="Dendrogram")
+
+```
+
+### 7. Zale¿noœci miêdzy autorami z grupy A
+```{r, echo = FALSE, warning=FALSE, message=FALSE, warning=FALSE, fig.height=10, fig.width=10    }
+
+autorzy_pakiety_A <- LISTA_TABEL[[2]]
+# te_zle <- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,144,145,146,171,184,228,239,250,251,252,259,314,335,354,356,404,446,459,479,554,567,601,666,715,747,750,846,848,945,959,960,978,983,1001,1050,1057,1058)
+
+te_zle_A <- c(1,2,3,22,25,5)
+autorzy_pakiety_A <- autorzy_pakiety_A[-te_zle_A,]
+
+
+info_pakiety <- read.csv("info_pakiety_incomplete.csv")
+
+
+
+info_pakiety$autorzy <- gsub(" <.*", "", info_pakiety$autorzy)
+info_pakiety$autorzy <- gsub(" ", "", info_pakiety$autorzy)
+
+info_pakiety <- info_pakiety %>% 
+  select(autorzy, nazwy_pakietow) %>% 
+  rename(pakiety = nazwy_pakietow)
+
+
+autorzy_pakiety_A <- autorzy_pakiety_A %>% 
+  left_join(info_pakiety) %>% 
+  mutate(autorzy = ifelse(is.na(autorzy),"inny",as.character(autorzy)))
+
+autorzy_pakiety_A_agr_01 <- autorzy_pakiety_A %>% 
+  select(-pakiety) %>% 
+  filter(autorzy != "inny")
+colnames(autorzy_pakiety_A_agr_01) <- c(1:(ncol(autorzy_pakiety_A_agr_01)-1),"autorzy")
+
+ autorzy_pakiety_A_agr <- autorzy_pakiety_A_agr_01 %>% 
+   group_by(autorzy) %>% 
+   summarise_all(sum)
+
+colnames(autorzy_pakiety_A_agr) <- c("autorzy",colnames(autorzy_pakiety_A)[-c(1,ncol(autorzy_pakiety_A))])
+
+
+autorzy_pakiety_A_agr_02 <- autorzy_pakiety_A_agr[autorzy_pakiety_A_agr$autorzy %in% colnames(autorzy_pakiety_A_agr),colnames(autorzy_pakiety_A_agr) %in% unique(autorzy_pakiety_A_agr$autorzy)]
+
+
+autorzy_pakiety_A_agr_03 <- cbind(autorzy= autorzy_pakiety_A_agr$autorzy[autorzy_pakiety_A_agr$autorzy %in% colnames(autorzy_pakiety_A_agr)],autorzy_pakiety_A_agr_02 )
+
+
+# sum(autorzy_pakiety_A_agr_03$autorzy == colnames(autorzy_pakiety_A_agr_03 )[-1] )
+
+
+aaa <- autorzy_pakiety_A_agr_03[,-1]
+rownames(aaa) <- colnames(aaa)
+
+data <- list("autor1"=NULL, "autor2"=NULL, "ilosc" = NULL)
+
+
+data <- as.data.frame(data)
+for(i in 1:nrow(aaa)){
+  for(j in 1:ncol(aaa)){
+    if(aaa[i,j]>0){
+      x <- data.frame(list(autor1= c(rownames(aaa)[i]), autor2= c( rownames(aaa)[j]), ilosc=c(aaa[i,j])))
+
+    data <- rbind(data, x)
+    }
+  }
+  
+  
+}
+
+simpleNetwork(data, Source = 1, Target = 2, height = 800, width = 800,
+              linkDistance = 50, charge = -30, fontSize = 10, fontFamily = "serif",
+              linkColour = "#666", nodeColour = "#3182bd", opacity = 0.6, zoom = T)
+```
+
+### 8. Zale¿noœci miêdzy pakietami z grupy A
+
+```{r echo=FALSE,output.mode='inline', fig.width=50,fig.height=50}
+
+zestawienie <- read.csv("grupy_pakietow.csv")[,-1]
+
+autorzy_pakiety_A <- LISTA_TABEL[[2]]
+# te_zle <- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,144,145,146,171,184,228,239,250,251,252,259,314,335,354,356,404,446,459,479,554,567,601,666,715,747,750,846,848,945,959,960,978,983,1001,1050,1057,1058)
+
+te_zle_A <- c(1,2,3,22,25,5)
+autorzy_pakiety_A <- autorzy_pakiety_A[-te_zle_A,]
+
+autorzy_pakiety_A <- autorzy_pakiety_A[autorzy_pakiety_A$pakiety %in% zestawienie$pakiety,]
+najwazniejsze <- apply(autorzy_pakiety_A[,-1],1,function(x) sum(x)>25)
+autorzy_pakiety_A <- autorzy_pakiety_A[c( najwazniejsze),]
+
+
+df <- data.frame(w1=c("a"), w2=c("a"))
+links <- apply(autorzy_pakiety_A[,-1],2, function(x) as.vector(autorzy_pakiety_A[as.logical(x),1]) )
+for(i in 1:(ncol(autorzy_pakiety_A)-1)){
+  if(length(links[[i]]>0)){
+    for(j in 1:length(links[[i]])){
+      for(k in 1:length(links[[i]])){
+        df <- rbind(df, data.frame(w1=links[[i]][j], w2=links[[i]][k]))
+      }
+    }
+  }
+
+}
+df <- df[-1,]
+pakiety <- unique(autorzy_pakiety_A$pakiety)
+pakiety_factor <- factor(pakiety, levels = pakiety)
+df <- unique(df)
+colnames(df) <- c("source", "target")
+df$source <- as.numeric(factor(df$source, levels = pakiety))-1
+df$target <- as.numeric(factor(df$target, levels = pakiety))-1
+
+
+grupa <- zestawienie$grupa[match(pakiety, zestawienie$pakiety)]
+
+net <- forceNetwork(df, Nodes = data.frame(pakiety = c(pakiety), 
+                                    grupa = grupa), 
+             NodeID = "pakiety", 
+             Group = "grupa",
+             Source = "source",
+             Target = "target",
+             fontSize = 20,
+             legend = TRUE,
+              height = 800, width = 800)
+
+net
+
+```
