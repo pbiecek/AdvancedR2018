@@ -14,7 +14,7 @@ Plan spotka&#324; MINI PW
 * 4 IV [Shiny](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_tworzyc_aplikajce.html)
 * 11 IV [HPC](https://rawgit.com/pbiecek/RandBigData/master/MINI_2015/materialy/hpc/hpc.html) + [Archivist](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pazury/archivist.html)
 * 18 IV Oddanie projektu 1
-* 25 IV Debugowanie kodu, profilowanie kodu
+* 25 IV [Debugowanie kodu](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pazury/debugowanie.html), [profilowanie kodu](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pazury/profilowanie.html), [zrównoleglanie kodu](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pazury/rownolegle.html)
 * 9 V Prezentacje pakietów cz. 1
 * 16 V Prezentacje pakietów cz. 2
 * 23 V Tidyverse cz 2, broom, forcats, purrr
