@@ -151,10 +151,10 @@ original = {
     w2 <- c(w2,n2)
 } },
 new = {
-  dlugosc <- nrow(df)
+  dlugosc <- nrow(df) # wczesniejsza alokacja pamieci
   w1 <- w2 <- vector(length = dlugosc)
-  for(i in 1:dlugosc){
-    n1 <- stri_count_fixed(df$v_names[i], ".")
+  for(i in 1:dlugosc){ # usuniecie petli wydluzalo obliczenia
+    n1 <- stri_count_fixed(df$v_names[i], ".")  # stri_count_fixed z pakietu stringi działa szybciej niż autorska funkcja
     n2 <- stri_count_fixed(df$v_names[i], "_")
     w1[i] <- n1
     w2[i] <- n2
