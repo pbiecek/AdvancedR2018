@@ -68,7 +68,7 @@ Tematy:
 * [R Package gdistance: Distances and Routes on Geographical Grids](https://www.jstatsoft.org/article/view/v076i13) Jacob van Etten
 * [Identifying Causal Effects with the R Package causaleffect](https://www.jstatsoft.org/article/view/v076i12) Santtu Tikka, Juha Karvanen
 * [PrevMap: An R Package for Prevalence Mapping](https://www.jstatsoft.org/article/view/v078i08) Emanuele Giorgi, Peter J. Diggle
-* [pvclass: An R Package for p Values for Classification](https://www.jstatsoft.org/article/view/v078i04) Niki Zumbrunnen, Lutz Dümbgen
+* [pvclass: An R Package for p Values for Classification](https://www.jstatsoft.org/article/view/v078i04) Niki Zumbrunnen, Lutz Dümbgen -- MK --
 * [SmoothHazard: An R Package for Fitting Regression Models to Interval-Censored Observations of Illness-Death Models](https://www.jstatsoft.org/article/view/v079i07)
 Célia Touraine, Thomas A. Gerds, Pierre Joly
 * [Constructing Multivariate Survival Trees: The MST Package for R](https://www.jstatsoft.org/article/view/v083i12) Peter Calhoun, Xiaogang Su, Martha Nunn, Juanjuan Fan
