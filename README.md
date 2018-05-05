@@ -65,7 +65,7 @@ Tematy:
 * [CircNNTSR: An R Package for the Statistical Analysis of Circular, Multivariate Circular, and Spherical Data Using Nonnegative Trigonometric Sums](https://www.jstatsoft.org/article/view/v070i06) Juan José Fernández-Durán, María Mercedes Gregorio-Domínguez
 * [bartMachine: Machine Learning with Bayesian Additive Regression Trees](https://www.jstatsoft.org/article/view/v070i04) Adam Kapelner, Justin Bleich
 * [gramEvol: Grammatical Evolution in R](https://www.jstatsoft.org/article/view/v071i01) Farzad Noorian, Anthony M. de Silva, Philip H. W. Leong
-* [R Package gdistance: Distances and Routes on Geographical Grids](https://www.jstatsoft.org/article/view/v076i13) Jacob van Etten
+* [R Package gdistance: Distances and Routes on Geographical Grids](https://www.jstatsoft.org/article/view/v076i13) Jacob van Etten --M.Piliszek--
 * [Identifying Causal Effects with the R Package causaleffect](https://www.jstatsoft.org/article/view/v076i12) Santtu Tikka, Juha Karvanen
 * [PrevMap: An R Package for Prevalence Mapping](https://www.jstatsoft.org/article/view/v078i08) Emanuele Giorgi, Peter J. Diggle
 * [pvclass: An R Package for p Values for Classification](https://www.jstatsoft.org/article/view/v078i04) Niki Zumbrunnen, Lutz Dümbgen
