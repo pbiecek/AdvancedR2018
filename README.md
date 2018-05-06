@@ -71,7 +71,7 @@ Tematy:
 * [pvclass: An R Package for p Values for Classification](https://www.jstatsoft.org/article/view/v078i04) Niki Zumbrunnen, Lutz Dümbgen -- MK --
 * [SmoothHazard: An R Package for Fitting Regression Models to Interval-Censored Observations of Illness-Death Models](https://www.jstatsoft.org/article/view/v079i07)
 Célia Touraine, Thomas A. Gerds, Pierre Joly
-* [Constructing Multivariate Survival Trees: The MST Package for R](https://www.jstatsoft.org/article/view/v083i12) Peter Calhoun, Xiaogang Su, Martha Nunn, Juanjuan Fan
+* [Constructing Multivariate Survival Trees: The MST Package for R](https://www.jstatsoft.org/article/view/v083i12) Peter Calhoun, Xiaogang Su, Martha Nunn, Juanjuan Fan *--J.G.*
 * [A Recipe for inferference: Start with Causal Inference. Add Interference. Mix Well with R.](https://www.jstatsoft.org/article/view/v082i02) Bradley C. Saul, Michael G. Hudgens
 * [SIS: An R Package for Sure Independence Screening in Ultrahigh-Dimensional Statistical Models](https://www.jstatsoft.org/article/view/v083i02) Diego Franco Saldana, Yang Feng
 * [PPtreeViz: An R Package for Visualizing Projection Pursuit Classification Trees](https://www.jstatsoft.org/article/view/v083i08) Eun-Kyung Lee
