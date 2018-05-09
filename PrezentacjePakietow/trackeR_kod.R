@@ -20,7 +20,7 @@ runSummaryFull <- summary(runs)
 plot(runSummaryFull, group = c("total", "moving"),
      what = c("avgSpeed", "distance", "duration", "avgHeartRate"))
 
-timeline(runsSummary)
+timeline(runSummaryFull)
 
 
 #------------------------------------
