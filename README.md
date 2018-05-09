@@ -65,13 +65,13 @@ Tematy:
 * [CircNNTSR: An R Package for the Statistical Analysis of Circular, Multivariate Circular, and Spherical Data Using Nonnegative Trigonometric Sums](https://www.jstatsoft.org/article/view/v070i06) Juan José Fernández-Durán, María Mercedes Gregorio-Domínguez
 * [bartMachine: Machine Learning with Bayesian Additive Regression Trees](https://www.jstatsoft.org/article/view/v070i04) Adam Kapelner, Justin Bleich
 * [gramEvol: Grammatical Evolution in R](https://www.jstatsoft.org/article/view/v071i01) Farzad Noorian, Anthony M. de Silva, Philip H. W. Leong
-* [R Package gdistance: Distances and Routes on Geographical Grids](https://www.jstatsoft.org/article/view/v076i13) Jacob van Etten
+* [R Package gdistance: Distances and Routes on Geographical Grids](https://www.jstatsoft.org/article/view/v076i13) Jacob van Etten--M.Piliszek--
 * [Identifying Causal Effects with the R Package causaleffect](https://www.jstatsoft.org/article/view/v076i12) Santtu Tikka, Juha Karvanen
 * [PrevMap: An R Package for Prevalence Mapping](https://www.jstatsoft.org/article/view/v078i08) Emanuele Giorgi, Peter J. Diggle
-* [pvclass: An R Package for p Values for Classification](https://www.jstatsoft.org/article/view/v078i04) Niki Zumbrunnen, Lutz Dümbgen
+* [pvclass: An R Package for p Values for Classification](https://www.jstatsoft.org/article/view/v078i04) Niki Zumbrunnen, Lutz Dümbgen -- MK --
 * [SmoothHazard: An R Package for Fitting Regression Models to Interval-Censored Observations of Illness-Death Models](https://www.jstatsoft.org/article/view/v079i07)
 Célia Touraine, Thomas A. Gerds, Pierre Joly
-* [Constructing Multivariate Survival Trees: The MST Package for R](https://www.jstatsoft.org/article/view/v083i12) Peter Calhoun, Xiaogang Su, Martha Nunn, Juanjuan Fan
+* [Constructing Multivariate Survival Trees: The MST Package for R](https://www.jstatsoft.org/article/view/v083i12) Peter Calhoun, Xiaogang Su, Martha Nunn, Juanjuan Fan *--J.G.*
 * [A Recipe for inferference: Start with Causal Inference. Add Interference. Mix Well with R.](https://www.jstatsoft.org/article/view/v082i02) Bradley C. Saul, Michael G. Hudgens
 * [SIS: An R Package for Sure Independence Screening in Ultrahigh-Dimensional Statistical Models](https://www.jstatsoft.org/article/view/v083i02) Diego Franco Saldana, Yang Feng
 * [PPtreeViz: An R Package for Visualizing Projection Pursuit Classification Trees](https://www.jstatsoft.org/article/view/v083i08) Eun-Kyung Lee
