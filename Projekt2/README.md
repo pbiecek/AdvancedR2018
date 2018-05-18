@@ -51,6 +51,6 @@ Proszę aby każdy przypisał się do jednej
 * `hugo_memorise_plot(plot)` w katalogu badania w podkatalogu galery zapamiętywany jest wykres jako obiekt R w formacie rda, razem z miniaturką w formatach pdf/png, które pozwalają wykres łatwiej wyszukać (*)
 * `hugo_memorise(obj)` w katalogu badania w podkatalogu memory, zapisywane są wskazne obiekty R w postaci plików rda (*)
 * `hugo_show_history()` każda z funkcji w pakiecie hugo powinna dbać o to by w katalogu badania była zapisywana aktualna historia poleceń, czyli wszystkie funkcje `hugo_*` muszą być wzbogacone o coś co tą historie zapisze. Ta funkcja wyświetla wzbogaconą historię poleceń. Wzbogacenie polega na tym, że jeżeli ktoś użył polecenia hugo_memorise* to obok komendy trzymana jest też względna ścieżka do wynikowego pliku a przy `hugo_memorise_plot()` trzymany jest link do miniaturki (wynikiem może być seria wpisów w konsoli lub strona HTML) (* * *).
-* `hugo_show_statistics()` wyświetla podsumowania dla obecnego badania, od kiedy jest prowadzone, ile obiektów zapamiętano, ile zbiorów danych wczytano, ile instrukcji wykonano (*)
+* `hugo_show_statistics()` wyświetla podsumowania dla obecnego badania, od kiedy jest prowadzone, ile obiektów zapamiętano, ile zbiorów danych wczytano, ile instrukcji wykonano (*) --- jablonskaj
 * `hugo_train_model(data, formula)` dla zadanej formuły i danych buduje modele regresyjne, drzewa decyzyjne, gbmlight, zapisuje modele do katalogu models a jako wynik zwraca wytrenowane modele oraz ocenę jak te modele są dobre (* *) --- kozaka93
 
