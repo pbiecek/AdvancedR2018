@@ -1,0 +1,26 @@
+Autorzy:
+ * Monika Chudek
+ * Joanna Jab³oñska
+ * Mateusz Koby³ka
+
+
+Link do analizowanych plików: https://drive.google.com/drive/folders/13AG3eJv4axVZnSJJGplARQVIB1if7b_a
+
+
+Za³¹czamy nastêpuj¹ce pliki:
+
+- do pobrania danych:
+   * cran_download.R - pobieraj¹cy pakiety z serwisu CRAN - R Project,
+   * git_download.R - pobieraj¹cy pakiety/skrypty z serwisu GitHub,
+
+- do analizy danych:
+   * get_info_targz.R - analizuj¹cy informacje zawarte w plikach pobranych z CRAN,
+   * get_info_github.R - analizuj¹cy informacje zawarte w plikach pobranych z GitHub-a,
+   * sos_packages.R - skrypt uzupe³niaj¹cy informacje o pakiecie, z jakiego pochodzi dana funkcja
+
+- do wizualizacji:
+   * pie_chart.R - skrypt wykonywuj¹cy wykres ko³owy,
+   * word_cloud.R - skrypt rysuj¹cy chmury s³ów,
+   * histogram.R - skrypt rysuj¹cy histogramy.
+
+W folderze znajduje siê równie¿ plik prezentacja.pdf z prezentacj¹ projektu pokazan¹ na zajêciach.
