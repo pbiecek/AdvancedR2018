@@ -23,6 +23,11 @@ Plan spotka&#324; MINI PW
 * 13 VI Oddanie projektu 2/2
 
 
+Projekt 2
+---------
+
+[Treść projektu drugiego jest tutaj](https://github.com/pbiecek/AdvancedR2018/blob/master/Projekt2/README.md)
+
 Projekt 1
 ---------
 
