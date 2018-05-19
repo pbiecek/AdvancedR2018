@@ -41,7 +41,7 @@ Funkcje hugo mogą być używane bez dziesiątek argumentów. Ważne wartości a
 Proszę aby każdy przypisał się do jednej
 
 * `hugo_start_investigation(path, ...)` – ta funkcja tworzy katalog roboczy badania. W nim należy zapisywac wszystkie istotne zmienne. Ta funkcja już istnieje, implementacja: PBi.
-* `hugo_save_investigation(...)` – ta funkcja zapisuje stan wszystkich ważnych zmiennych i pakietów w katalogu path. Powinna współpracować z hugo_continue_investigation()  (*)
+* `hugo_save_investigation(...)` – ta funkcja zapisuje stan wszystkich ważnych zmiennych i pakietów w katalogu path. Powinna współpracować z hugo_continue_investigation()  (*) --- monikachudek
 * `hugo_continue_investigation(path, ...)` -  ta funkcja odczytuje z katalogu badania, do sesji wszystkie ważne zmienne i ładuje potrzebne pakiety by kontynuować badanie (wczytuje pakiety w wersjach aktualnych w chwili gdy badanie było zapisane). (* *)
 * `hugo_read_data(path, ...)` – ta funkcja wczytuje dane z pliku path (może być url). Powinna obsługiwać przynajmniej pliki txt, csv, rda, RData, json, xls, xls, tsv. Tam gdzie to możliwe powinna odgadywać separator i nagłówki. Jeżeli nie uda się odgadnąć formatu danych to funkcja powinna wyświetlić kilka wierszy i wypytać użytkownika co jest separatorem czy jest nagłówek itp. Wynikowe dane zapisywane są w katalogu data badania (* * *)
 * `hugo_clean_data(data, ...)` - ta funkcja imputuje wartości brakujące medianą lub modą (dla factorów), w zmiennych skośnych identyfikuje wartości odstające i przycina do rozsądnego kwantyla, zmienne factorowe spłasza, łącząc najrzadziej występujące factor w jeden (* *)
