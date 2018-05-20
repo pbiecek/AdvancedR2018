@@ -1,12 +1,13 @@
-install.packages("ranger")
-install.packages("caret")
-install.packages("microbenchmark")
-install.packages("survival")
+#install.packages("ranger")
+#install.packages("caret")
+#install.packages("microbenchmark")
+#install.packages("survival")
 
 library(ranger)
 library(caret)
 library(microbenchmark)
 library(survival)
+library(ggplot2)
 
 ## Simple model for iris dataset
 {
@@ -18,7 +19,6 @@ library(survival)
 iris_ranger_model <- ranger(Species ~ ., data = iris_train, num.trees=30)
 prediction <- predict(iris_ranger_model, iris_test)$prediction
 prediction
-?ranger
 
 # Accuracy
 sum(iris_test$Species == prediction)/length(prediction)
