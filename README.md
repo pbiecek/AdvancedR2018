@@ -31,6 +31,8 @@ Projekt 2
 Projekt 1
 ---------
 
+[Wyniki](https://docs.google.com/spreadsheets/d/1ByI5nyFEyR3UhhPtgQSo84Y6BxKxyDHCwpNIBx_2-2o/edit?usp=sharing)
+
 Projekt 1 można wykonywać w grupach do 3 osób.
 Celem projektu jest zebranie z różnych źródeł skryptów R od różnych autorów, a następnie wykonanie prostej analizy częstościowej na tych skryptach.
 Każdy zespół powinien:
