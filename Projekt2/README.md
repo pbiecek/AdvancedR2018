@@ -54,5 +54,5 @@ Proszę aby każdy przypisał się do jednej
 * `hugo_show_statistics()` wyświetla podsumowania dla obecnego badania, od kiedy jest prowadzone, ile obiektów zapamiętano, ile zbiorów danych wczytano, ile instrukcji wykonano  --- jablonskaj
 * `hugo_train_model(data, formula)` dla zadanej formuły i danych buduje modele regresyjne, drzewa decyzyjne, gbmlight, zapisuje modele do katalogu models a jako wynik zwraca wytrenowane modele oraz ocenę jak te modele są dobre  --- kozaka93
 * `hugo_memorise_table(table)` w katalogu badania w podkatalogu gallery zapamiętywana jest tabela jako obiekt R w formacie rda, razem z plikiem md z tabelą w postaci markdown i tabelą zapisaną w formacie xlsx i docx
-* `hugo_memorise_model(model)` w katalogu badania w podkatalogu gallery zapamiętywany jest model jako obiekt R w formacie rda, razem z plikiem md podsumowującym model (w oparciu o statystyki wyznaczane przez pakiet `broom`)
+* `hugo_memorise_model(model)` w katalogu badania w podkatalogu gallery zapamiętywany jest model jako obiekt R w formacie rda, razem z plikiem md podsumowującym model (w oparciu o statystyki wyznaczane przez pakiet `broom`) --- MalgosiaL
 
