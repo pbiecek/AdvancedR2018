@@ -17,7 +17,7 @@ Plan spotka&#324; MINI PW
 * 25 IV [Debugowanie kodu](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pazury/debugowanie.html), [profilowanie kodu](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pazury/profilowanie.html), [zrównoleglanie kodu](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pazury/rownolegle.html)
 * 9 V Prezentacje pakietów cz. 1
 * 16 V Prezentacje pakietów cz. 2
-* 23 V Tidyverse cz 2, broom, forcats, purrr
+* 23 V Tidyverse cz 2, [broom](https://opr.princeton.edu/workshops/Downloads/2016Jan_BroomRobinson.pdf), [forcats](http://pbiecek.github.io/Przewodnik/Programowanie/tidyverse/forcats.html), [lubridate](http://pbiecek.github.io/Przewodnik/Programowanie/tidyverse/lubridate.html), [purrr](https://purrr.tidyverse.org/), [tidyverse](https://www.jstatsoft.org/index.php/jss/article/view/v059i10/v59i10.pdf), [presiData](http://biostatistics.dk/eRum2018/data/presiData.rda)
 * 30 V Oddanie projektu 2/1
 * 6 VI Bazy danych duże i małe
 * 13 VI Oddanie projektu 2/2
@@ -30,6 +30,8 @@ Projekt 2
 
 Projekt 1
 ---------
+
+[Wyniki](https://docs.google.com/spreadsheets/d/1ByI5nyFEyR3UhhPtgQSo84Y6BxKxyDHCwpNIBx_2-2o/edit?usp=sharing)
 
 Projekt 1 można wykonywać w grupach do 3 osób.
 Celem projektu jest zebranie z różnych źródeł skryptów R od różnych autorów, a następnie wykonanie prostej analizy częstościowej na tych skryptach.
