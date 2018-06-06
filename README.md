@@ -55,6 +55,8 @@ Wyniki (prezentacje, skrypty scapujące dane) proszę umieścić w katalogu `Pro
 Prezentacje pakietów
 --------------------
 
+[Punktacja](https://docs.google.com/spreadsheets/d/1x1nsR1PV16MHyUm64anSKlwWBWzWAWalYc3762M24us/edit?usp=sharing)
+
 W niewielkich grupach (jedna lub dwie osoby) proszę przygotowac krótką prezentację nt jednego wybranego pakietu dla R. Prezentacja powinna być krótka (10 min) zawierać informacje o tym: 1. jaki problem rozwiązuje dany pakiet, 2. przykład użycia danego pakietu, 3. dyskusja nt elastyczności i łatwości użycia danego pakietu.
 
 Pakiety należy omawiać w oparciu o artykułu z JSS. Lista pakietów do wyboru znajduje się poniżej. Do jednego tematu zgłosić może się maksymalnie jedna grupa, decyduje kolejność zgłoszeń, proszę dopisać się poniżęj do tematu i przesłać zgłoszenie jako pull request.
