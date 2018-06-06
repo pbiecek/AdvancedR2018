@@ -19,7 +19,7 @@ Plan spotka&#324; MINI PW
 * 16 V Prezentacje pakietów cz. 2
 * 23 V Tidyverse cz 2, [broom](https://opr.princeton.edu/workshops/Downloads/2016Jan_BroomRobinson.pdf), [forcats](http://pbiecek.github.io/Przewodnik/Programowanie/tidyverse/forcats.html), [lubridate](http://pbiecek.github.io/Przewodnik/Programowanie/tidyverse/lubridate.html), [purrr](https://purrr.tidyverse.org/), [tidyverse](https://www.jstatsoft.org/index.php/jss/article/view/v059i10/v59i10.pdf), [presiData](http://biostatistics.dk/eRum2018/data/presiData.rda)
 * 30 V Oddanie projektu 2/1
-* 6 VI Bazy danych duże i małe
+* 6 VI Bazy danych duże i małe [bazy danych](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_pracowac_z_bazami_danych.html), [zabawka](https://github.com/pbiecek/RandBigData/blob/master/MINI_2015/materialy/bazy_danych/zabawka.db), [jeżeli wystarczy czasu](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pazury/REST.html)
 * 13 VI Oddanie projektu 2/2
 
 
