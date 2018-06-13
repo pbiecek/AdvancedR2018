@@ -1,0 +1,81 @@
+This is your hugoing history: 
+ 
+1) hugo_start_investigation() 
+2) hugo_read_data(path = "https://github.com/pbiecek/AdvancedR2018/blob/master/Projekt2/apartments.xlsx") 
+3) hugo_read_data(path = "apartments.xlsx") 
+4) hugo_clean_data(data = db) 
+5) hugo_clean_data(data = db) 
+6) hugo_summarise_data(data = db)
+ Saved files: 
+H:/Windows7/Documents/R dla zaawansowanych/hugo_investigation_2018_06_13/gallery/hugo_summary_db.pdf 
+7) hugo_memorise_plot() 
+8) hugo_memorise_plot(plot = plot_to_save)
+ Saved files: 
+H:/Windows7/Documents/R dla zaawansowanych/hugo_investigation_2018_06_13/gallery/plot01.pdf
+H:/Windows7/Documents/R dla zaawansowanych/hugo_investigation_2018_06_13/gallery/plot01.png
+H:/Windows7/Documents/R dla zaawansowanych/hugo_investigation_2018_06_13/gallery/plot01.rda 
+9) hugo_train_model(data = db, formula = m2.price ~ .) 
+10) hugo_memorise_model(model = model_lm)
+ Saved files: 
+H:/Windows7/Documents/R dla zaawansowanych/hugo_investigation_2018_06_13/gallery/model_lm.md
+H:/Windows7/Documents/R dla zaawansowanych/hugo_investigation_2018_06_13/gallery/model_lm.rda 
+11) hugo_memorise(object = mse)
+ Saved files: 
+H:/Windows7/Documents/R dla zaawansowanych/hugo_investigation_2018_06_13/memory/mse.rda 
+12) hugo_memorise_plot(plot = {
+ Saved files: 
+H:/Windows7/Documents/R dla zaawansowanych/hugo_investigation_2018_06_13/gallery/fitted vs true.pdf
+H:/Windows7/Documents/R dla zaawansowanych/hugo_investigation_2018_06_13/gallery/fitted vs true.png
+H:/Windows7/Documents/R dla zaawansowanych/hugo_investigation_2018_06_13/gallery/fitted vs true.rda 
+13) hugo_memorise_plot(plot = plot(model_lm$residuals), name = "reszty")
+ Saved files: 
+H:/Windows7/Documents/R dla zaawansowanych/hugo_investigation_2018_06_13/gallery/reszty.pdf
+H:/Windows7/Documents/R dla zaawansowanych/hugo_investigation_2018_06_13/gallery/reszty.png
+H:/Windows7/Documents/R dla zaawansowanych/hugo_investigation_2018_06_13/gallery/reszty.rda 
+14) hugo_show_history() 
+15) hugo_save_investigation() 
+16) hugo_start_investigation(path = "LazeckaKomosinski") 
+17) hugo_read_data(path = "apartments.xlsx") 
+18) hugo_clean_data(data = db) 
+19) hugo_summarise_data(data = db) 
+20) hugo_summarise_data(data = db)
+ Saved files: 
+H:/Windows7/Documents/R dla zaawansowanych/LazeckaKomosinski/gallery/hugo_summary_db.pdf 
+21) hugo_memorise_plot(plot = plot_to_save)
+ Saved files: 
+H:/Windows7/Documents/R dla zaawansowanych/LazeckaKomosinski/gallery/plot01.pdf
+H:/Windows7/Documents/R dla zaawansowanych/LazeckaKomosinski/gallery/plot01.png
+H:/Windows7/Documents/R dla zaawansowanych/LazeckaKomosinski/gallery/plot01.rda 
+22) hugo_train_model(data = db, formula = m2.price ~ .) 
+23) hugo_memorise_model(model = model_lm)
+ Saved files: 
+H:/Windows7/Documents/R dla zaawansowanych/LazeckaKomosinski/gallery/model_lm.md
+H:/Windows7/Documents/R dla zaawansowanych/LazeckaKomosinski/gallery/model_lm.rda 
+24) hugo_memorise(object = mse)
+ Saved files: 
+H:/Windows7/Documents/R dla zaawansowanych/LazeckaKomosinski/memory/mse.rda 
+25) hugo_memorise_plot(plot = {
+ Saved files: 
+H:/Windows7/Documents/R dla zaawansowanych/LazeckaKomosinski/gallery/fitted vs true.pdf
+H:/Windows7/Documents/R dla zaawansowanych/LazeckaKomosinski/gallery/fitted vs true.png
+H:/Windows7/Documents/R dla zaawansowanych/LazeckaKomosinski/gallery/fitted vs true.rda 
+26) hugo_memorise_plot(plot = plot(model_lm$residuals), name = "reszty")
+ Saved files: 
+H:/Windows7/Documents/R dla zaawansowanych/LazeckaKomosinski/gallery/reszty.pdf
+H:/Windows7/Documents/R dla zaawansowanych/LazeckaKomosinski/gallery/reszty.png
+H:/Windows7/Documents/R dla zaawansowanych/LazeckaKomosinski/gallery/reszty.rda 
+27) hugo_show_history() 
+28) hugo_save_investigation() 
+29) hugo_share_object(object = model_lm) 
+30) hugo_share_object(object = model_lm) 
+31) hugo_get_object(user = "pbiecek", repo_name = "AdvancedR2018",  
+32) hugo_share_object(object = model_lm) 
+33) hugo_get_object(user = "tidyverse", repo_name = "readr", object_name = "revdep/checks.rds") 
+34) hugo_share_object(object = model_lm) 
+35) hugo_share_object(object = model_lm) 
+36) hugo_share_object(object = model_lm) 
+37) hugo_share_object(object = model_lm) 
+38) hugo_share_object(object = model_lm) 
+39) hugo_get_object(user = "pbiecek", repo_name = "AdvancedR2018",  
+40) hugo_share_secret(object = model_lm, passphrase = "noga") 
+41) hugo_show_history() 
