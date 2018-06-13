@@ -1,0 +1,44 @@
+This is your hugoing history: 
+ 
+1) hugo_continue_investigation() 
+2) hugo_continue_investigation(path = "Maciek_i_Ja") 
+3) hugo_start_investigation(path = "Maciek_i_Ja") 
+4) hugo_read_data(path = "~/R/AdvancedR2018/Projekt2/apartments.xlsx") 
+5) hugo_summarise_data(data = dane)
+ Saved files: 
+/home/mk/R/AdvancedR2018/Projekt2/Maciek_i_Ja/gallery/hugo_summary_dane.html 
+6) hugo_memorise_plot(plot = {
+ Saved files: 
+/home/mk/R/AdvancedR2018/Projekt2/Maciek_i_Ja/gallery/plot01.pdf
+/home/mk/R/AdvancedR2018/Projekt2/Maciek_i_Ja/gallery/plot01.png
+/home/mk/R/AdvancedR2018/Projekt2/Maciek_i_Ja/gallery/plot01.rda 
+7) hugo_memorise_model(model = model_las)
+ Saved files: 
+/home/mk/R/AdvancedR2018/Projekt2/Maciek_i_Ja/gallery/model_las.md
+/home/mk/R/AdvancedR2018/Projekt2/Maciek_i_Ja/gallery/model_las.rda 
+8) hugo_memorise(object = MSE)
+ Saved files: 
+/home/mk/R/AdvancedR2018/Projekt2/Maciek_i_Ja/memory/MSE.rda 
+9) hugo_memorise_plot(plot = {
+ Saved files: 
+/home/mk/R/AdvancedR2018/Projekt2/Maciek_i_Ja/gallery/plot02.pdf
+/home/mk/R/AdvancedR2018/Projekt2/Maciek_i_Ja/gallery/plot02.png
+/home/mk/R/AdvancedR2018/Projekt2/Maciek_i_Ja/gallery/plot02.rda 
+10) hugo_memorise_plot(plot = {
+ Saved files: 
+/home/mk/R/AdvancedR2018/Projekt2/Maciek_i_Ja/gallery/przwidywane vs realne ceny.pdf
+/home/mk/R/AdvancedR2018/Projekt2/Maciek_i_Ja/gallery/przwidywane vs realne ceny.png
+/home/mk/R/AdvancedR2018/Projekt2/Maciek_i_Ja/gallery/przwidywane vs realne ceny.rda 
+11) hugo_memorise_plot(plot = {
+ Saved files: 
+/home/mk/R/AdvancedR2018/Projekt2/Maciek_i_Ja/gallery/ wykres reszt.pdf
+/home/mk/R/AdvancedR2018/Projekt2/Maciek_i_Ja/gallery/ wykres reszt.png
+/home/mk/R/AdvancedR2018/Projekt2/Maciek_i_Ja/gallery/ wykres reszt.rda 
+12) hugo_memorise_model(model = model_las)
+ Saved files: 
+/home/mk/R/AdvancedR2018/Projekt2/Maciek_i_Ja/gallery/model_las.md
+/home/mk/R/AdvancedR2018/Projekt2/Maciek_i_Ja/gallery/model_las.rda 
+13) hugo_memorise(object = MSE) 
+14) hugo_show_history() 
+15) hugo_memorise(object = hugo_show_history()) 
+16) hugo_show_history() 
