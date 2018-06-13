@@ -1,0 +1,30 @@
+This is your hugoing history: 
+ 
+1) hugo_start_investigation() 
+2) hugo_read_data(path = "h:/Windows7/Desktop/hugo test/HR_data.csv") 
+3) hugo_summarise_data(data = dane) 
+4) hugo_summarise_data(data = dane)
+ Saved files: 
+h:/Windows7/Desktop/hugo test/hugo_investigation_2018_06_13/gallery/hugo_summary_dane.pdf 
+5) hugo_clean_data(data = dane) 
+6) hugo_train_model(data = dane[c(1:500, 2001:2500), ], formula = as.formula("left~.")) 
+7) hugo_memorise_model(model = model)
+ Saved files: 
+h:/Windows7/Desktop/hugo test/hugo_investigation_2018_06_13/gallery/model.md
+h:/Windows7/Desktop/hugo test/hugo_investigation_2018_06_13/gallery/model.rda 
+8) hugo_memorise(object = model$results)
+ Saved files: 
+h:/Windows7/Desktop/hugo test/hugo_investigation_2018_06_13/memory/model$results.rda 
+9) hugo_memorise_plot(plot = wykres)
+ Saved files: 
+h:/Windows7/Desktop/hugo test/hugo_investigation_2018_06_13/gallery/plot02.pdf
+h:/Windows7/Desktop/hugo test/hugo_investigation_2018_06_13/gallery/plot02.png
+h:/Windows7/Desktop/hugo test/hugo_investigation_2018_06_13/gallery/plot02.rda 
+10) hugo_show_history() 
+11) hugo_save_investigation() 
+12) hugo_share_object(object = model) 
+13) hugo_share_object(object = model) 
+14) hugo_share_object(object = model) 
+15) hugo_share_object(object = model) 
+16) hugo_show_history() 
+17) hugo_show_history() 
