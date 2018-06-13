@@ -1,0 +1,21 @@
+This is your hugoing history: 
+ 
+1) hugo_start_investigation(path = "Jablonska_Kobylka") 
+2) hugo_read_data(path = "https://raw.githubusercontent.com/pbiecek/AdvancedR2018/master/Projekt2/HR_data.csv",  
+3) hugo_clean_data(data = dane) 
+4) hugo_memorise(object = train)
+ Saved files: 
+H:/Windows7/Documents/Jablonska_Kobylka/memory/train.rda 
+5) hugo_memorise(object = test)
+ Saved files: 
+H:/Windows7/Documents/Jablonska_Kobylka/memory/test.rda 
+6) hugo_train_model(data = train, formula = "left ~ .") 
+7) hugo_memorise_table(table = tab, name = "HR_model_tabela_reklasyfikacji") 
+8) hugo_memorise_plot(plot = plot(table(test$left, levels)), name = "HR_porownanie_ryzyka_na_zbiorze_testowym") 
+9) hugo_show_statistics() 
+10) hugo_save_investigation(session_name = "model_HR") 
+11) hugo_continue_investigation(session_name = "model_HR") 
+12) hugo_show_history() 
+13) hugo_share_object(object = model) 
+14) hugo_share_object(object = object) 
+15) hugo_show_history() 
