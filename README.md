@@ -19,7 +19,7 @@ Plan spotka&#324; MINI PW
 * 16 V Prezentacje pakietów cz. 2
 * 23 V Tidyverse cz 2, [broom](https://opr.princeton.edu/workshops/Downloads/2016Jan_BroomRobinson.pdf), [forcats](http://pbiecek.github.io/Przewodnik/Programowanie/tidyverse/forcats.html), [lubridate](http://pbiecek.github.io/Przewodnik/Programowanie/tidyverse/lubridate.html), [purrr](https://purrr.tidyverse.org/), [tidyverse](https://www.jstatsoft.org/index.php/jss/article/view/v059i10/v59i10.pdf), [presiData](http://biostatistics.dk/eRum2018/data/presiData.rda)
 * 30 V Oddanie projektu 2/1
-* 6 VI Bazy danych duże i małe
+* 6 VI Bazy danych duże i małe [bazy danych](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_pracowac_z_bazami_danych.html), [zabawka](https://github.com/pbiecek/RandBigData/blob/master/MINI_2015/materialy/bazy_danych/zabawka.db), [jeżeli wystarczy czasu](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pazury/REST.html), [OO](http://adv-r.had.co.nz/OO-essentials.html), [OO skrypt z zajęć](https://github.com/pbiecek/AdvancedR2018/blob/master/lab/klasy.R)
 * 13 VI Oddanie projektu 2/2
 
 
@@ -54,6 +54,8 @@ Wyniki (prezentacje, skrypty scapujące dane) proszę umieścić w katalogu `Pro
 
 Prezentacje pakietów
 --------------------
+
+[Punktacja](https://docs.google.com/spreadsheets/d/1x1nsR1PV16MHyUm64anSKlwWBWzWAWalYc3762M24us/edit?usp=sharing)
 
 W niewielkich grupach (jedna lub dwie osoby) proszę przygotowac krótką prezentację nt jednego wybranego pakietu dla R. Prezentacja powinna być krótka (10 min) zawierać informacje o tym: 1. jaki problem rozwiązuje dany pakiet, 2. przykład użycia danego pakietu, 3. dyskusja nt elastyczności i łatwości użycia danego pakietu.
 
