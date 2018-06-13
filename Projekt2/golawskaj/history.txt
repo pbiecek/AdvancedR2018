@@ -1,0 +1,33 @@
+This is your hugoing history: 
+ 
+1) hugo_start_investigation(path = "h:/Windows7/Desktop/New folder/invest") 
+2) hugo_read_data(path = "https://raw.githubusercontent.com/pbiecek/AdvancedR2018/master/Projekt2/HR_data.csv",  
+3) hugo_clean_data(data = HR) 
+4) hugo_summarise_data(data = HR_clean) 
+5) hugo_train_model(data = HR, formula = left ~ .) 
+6) hugo_train_model(data = subs, formula = left ~ .) 
+7) hugo_memorise_model(model = model)
+ Saved files: 
+H:/Windows7/Desktop/projekt 2 R adv/hugo-master/h:/Windows7/Desktop/New folder/invest/gallery/model.md
+H:/Windows7/Desktop/projekt 2 R adv/hugo-master/h:/Windows7/Desktop/New folder/invest/gallery/model.rda 
+8) hugo_memorise_model(model = model)
+ Saved files: 
+H:/Windows7/Desktop/projekt 2 R adv/hugo-master/h:/Windows7/Desktop/New folder/invest/gallery/model.md
+H:/Windows7/Desktop/projekt 2 R adv/hugo-master/h:/Windows7/Desktop/New folder/invest/gallery/model.rda 
+9) hugo_memorise(object = BA)
+ Saved files: 
+H:/Windows7/Desktop/projekt 2 R adv/hugo-master/h:/Windows7/Desktop/New folder/invest/memory/BA.rda 
+10) hugo_memorise_plot(plot = plot(pred[test$left == 1]), name = "osoby odesz造")
+ Saved files: 
+H:/Windows7/Desktop/projekt 2 R adv/hugo-master/h:/Windows7/Desktop/New folder/invest/gallery/osoby odesz造.pdf
+H:/Windows7/Desktop/projekt 2 R adv/hugo-master/h:/Windows7/Desktop/New folder/invest/gallery/osoby odesz造.png
+H:/Windows7/Desktop/projekt 2 R adv/hugo-master/h:/Windows7/Desktop/New folder/invest/gallery/osoby odesz造.rda 
+11) hugo_memorise_plot(plot = plot(pred[test$left == 0]), name = "osoby zosta造")
+ Saved files: 
+H:/Windows7/Desktop/projekt 2 R adv/hugo-master/h:/Windows7/Desktop/New folder/invest/gallery/osoby zosta造.pdf
+H:/Windows7/Desktop/projekt 2 R adv/hugo-master/h:/Windows7/Desktop/New folder/invest/gallery/osoby zosta造.png
+H:/Windows7/Desktop/projekt 2 R adv/hugo-master/h:/Windows7/Desktop/New folder/invest/gallery/osoby zosta造.rda 
+12) hugo_save_investigation() 
+13) hugo_share_object(object = BA) 
+14) hugo_show_statistics() 
+15) hugo_show_history() 
